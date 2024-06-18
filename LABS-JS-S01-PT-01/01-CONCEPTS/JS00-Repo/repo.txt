@@ -1,2 +1,15 @@
 Github Repository
 https://github.com/G-Moll/JS-WEEKENDS-2024-06-08
+
+// Quick References
+// w3schools
+
+// Taller de JS se enfocará en:
+	// JS
+	// API/Backend
+
+// Alumno desarrollará las partes de:
+// Front
+// DBs
+
+
