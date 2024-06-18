@@ -6,11 +6,14 @@
 // let
 // const
 
-// Es un espacio de memoria para almacenar un dato
+// CLOSE, BUT NOT RIGHT:
+// It is a MEMORY SLOT that STORES some DATA
 
-// label/idetifier
-// Data
-// Memory slot 0xffaaa  
+// CLOSEST RIGHT DEFINITION
+// Is an element made of 3 parts
+// 	Label/idetifier
+// 	Data
+// 	Memory Slot (0xffaaa Hex Address, where the data is stored)  
 
 var a = 10;
 
