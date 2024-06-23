@@ -28,5 +28,5 @@
 // Instace creation
 // new
 
-// finalización de sentencias
+// sentence ending
 // ;

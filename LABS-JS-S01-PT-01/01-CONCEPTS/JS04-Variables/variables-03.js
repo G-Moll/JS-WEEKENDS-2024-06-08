@@ -13,9 +13,5 @@ z = "a"; // "a"
 var y = 0;
 y++;
 
-
-// Hacer un sitio
-// y en el archivo js generar expresiones de cada uno de los grupos
-
 console.log( 10 );
 
