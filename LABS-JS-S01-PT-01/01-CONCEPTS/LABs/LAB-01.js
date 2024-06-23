@@ -28,6 +28,16 @@ console.log( arrowFn( months, 1 ) );
 console.log( arrowFn( months, 12 ) );
 
 
+// USING "CALLBACKS" (Basic Example)
+function mainCaller( fn ) {
+	return fn();
+}
+function mainCalle() {
+	return "Callback " + months[ Math.random() > 0.5 ? 0 : 11 ];
+}
+console.log( mainCaller( mainCalle ) );
+
+
 // USING "IIFES"
 var iifeFn = (function( monthsArray, monthNum ) {
 	return "IIFE " + monthsArray[ monthNum - 1 ];	
