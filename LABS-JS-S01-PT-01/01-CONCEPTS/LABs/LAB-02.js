@@ -28,7 +28,7 @@ console.log( arrowFn( months, 1 ) );
 console.log( arrowFn( months, 12 ) );
 
 
-// USING "CALLBACKS" (Basic Example)
+// USING CALLBACKS (Basic Example)
 function mainCaller( fn ) {
 	return fn();
 }
@@ -38,7 +38,7 @@ function mainCalle() {
 console.log( mainCaller( mainCalle ) );
 
 
-// USING "IIFES"
+// USING IIFES
 var iifeFn = (function( monthsArray, monthNum ) {
 	return "IIFE " + monthsArray[ monthNum - 1 ];	
 });
