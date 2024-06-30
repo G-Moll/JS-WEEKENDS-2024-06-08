@@ -19,4 +19,4 @@ console.log( j.data[ 3 ].y );
 // console.log( j.value.c );
 
 
-https://jsonplaceholder.typicode.com/
+// https://jsonplaceholder.typicode.com/
