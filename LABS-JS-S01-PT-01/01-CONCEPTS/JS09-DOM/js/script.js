@@ -2,9 +2,10 @@ var title = document.getElementById( 'title' );
 title.innerHTML = "Hello DOM";
 // title.className = "highlight";
 
-// Events - Acciones que suceden en algun momento del tiempo
+// Events - Acciones que suceden en algun momento del tiempo 
 title.addEventListener( "click", clickPerformed  );
 
+// EventHandler
 function clickPerformed( e ) {
 	title.className = "highlight";
 	console.log( e, e.type );
@@ -13,7 +14,7 @@ function clickPerformed( e ) {
 
 
 // For DOM
-var dataDOM = [ "Yellow", "Red", "Green", "Blue" ];
+var dataDOM = [ "Yellow", "Red", "Green", "Blue" , "Purple" , "RedOrange" ];
 var holder = document.getElementsByTagName( "div" )[ 0 ];
 var domContent = "";
 for( var i = 0; i < dataDOM.length; i++  ) {
