@@ -1,6 +1,7 @@
 <?php
-header( "Access-Control-Allow-Origin: *" );
+header( "Access-Control-Allow-Origin: http://localhost:3000" );
 $json_data = [
+	"info" => "php data",
 	"data" => [
 		[
 			"id" => 1,
@@ -15,6 +16,20 @@ $json_data = [
 			"property" => "New Aparment E&R 2025",
 			"location" => 1,
 			"price" => 8000
+		],
+		[
+			"id" => 3,
+			"available" => 1,
+			"property" => "Tiny House E&R 2025",
+			"location" => 1,
+			"price" => 28000
+		],
+		[
+			"id" => 4,
+			"available" => 1,
+			"property" => "New Building E&R 2026",
+			"location" => 1,
+			"price" => 38000
 		]
 	]
 ];

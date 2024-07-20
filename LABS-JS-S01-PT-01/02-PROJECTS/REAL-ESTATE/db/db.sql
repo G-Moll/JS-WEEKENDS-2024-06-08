@@ -5,7 +5,7 @@ CREATE TABLE draftproperties(
 	id INT( 11 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	available BOOLEAN DEFAULT TRUE,
 	property VARCHAR( 255 ) NOT NULL,
-	location BOOLEAN,
+	location BOOLEAN NOT NULL,
 	price INT( 11 ) NOT NULL
 );
 
@@ -15,6 +15,9 @@ INSERT INTO draftproperties VALUES ( NULL, DEFAULT, "Tiny House E&R 2025", true,
 INSERT INTO draftproperties VALUES ( NULL, DEFAULT, "Bedroom", false, 6000 );
 INSERT INTO draftproperties VALUES ( NULL, DEFAULT, "Parking lot", false, 380000 );
 
+SELECT * FROM draftproperties;
+
 
 SHOW TABLES;
 DESCRIBE  draftproperties;
+-- DROP TABLE draftproperties;
