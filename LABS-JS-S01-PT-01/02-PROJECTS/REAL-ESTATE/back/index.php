@@ -2,6 +2,7 @@
 header( "Access-Control-Allow-Origin: http://localhost:3000" );
 $json_data = [
 	"info" => "php data",
+	"hardcode" => "php data",
 	"data" => [
 		[
 			"id" => 1,
