@@ -9,6 +9,9 @@ CREATE TABLE draftproperties(
 	price INT( 11 ) NOT NULL
 );
 
+-- HARD DELETE
+-- SOFT DELETE
+
 INSERT INTO draftproperties VALUES ( NULL, DEFAULT, "Aparment E&R 2024", true, 20000 );
 INSERT INTO draftproperties VALUES ( NULL, DEFAULT, "New Aparment E&R 2025", true, 8000 );
 INSERT INTO draftproperties VALUES ( NULL, DEFAULT, "Tiny House E&R 2025", true, 28000 );

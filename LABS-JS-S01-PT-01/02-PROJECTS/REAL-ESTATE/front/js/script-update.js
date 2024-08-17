@@ -11,22 +11,20 @@ var recordUpdate = document.getElementById( "recordUpdate" );
 var recordDelete = document.getElementById( "recordDelete" );
 var recordSelect = document.getElementById( "recordSelect" );
 
-var dataProperty = "House EAR 2024";
-var dataLocation = true;
-var dataPrice = 3700;
-
-recordInsert.addEventListener( "click", function( e ) {
+recordUpdate.addEventListener( "click", function( e ) {
 	e.preventDefault();
 
-	var endpoint = "http://localhost:8080/index-insert.php";
+	var endpoint = "http://localhost:8080/index-update.php";
 	var xhr = new XMLHttpRequest();
 	xhr.open( "POST", endpoint, true );
 	xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
-	xhr.send( "property=" + inputProperty.value + "&location=" + inputLocation.value + "&price=" + inputPrice.value );
-	xhr.addEventListener( "load", loadInsertedData );
+	xhr.send( "id=" + inputId.value + "&property=" + inputProperty.value + "&location=" + inputLocation.value + "&price=" + inputPrice.value );
+	xhr.addEventListener( "load", loadUpdatedData );
 });
 
-function loadInsertedData( e ) {
+function loadUpdatedData( e ) {
 	var dataJson = JSON.parse( e.target.responseText );;
 	console.log( dataJson );
+	// inputProperty.value = "";
+	formUI.reset();
 }

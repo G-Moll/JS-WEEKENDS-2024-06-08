@@ -1,5 +1,5 @@
 var holder = document.getElementById( "holder" );
-var endpoint = "http://localhost:8080/index-select.php";
+var endpoint = "http://localhost:8080/index-select-all.php";
 var htmlData = "";
 var xhr = new XMLHttpRequest();
 xhr.open( "GET", endpoint, true );
