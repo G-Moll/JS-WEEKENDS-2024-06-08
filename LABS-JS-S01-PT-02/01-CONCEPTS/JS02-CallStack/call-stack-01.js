@@ -11,7 +11,6 @@ function b() {
 	console.log( "Calling B function" );
 	c();
 	console.log( "Calling B function" );
-	AJAX/Promises/Async-Await
 }
 function c() {
 	console.log( "Calling C function" );
