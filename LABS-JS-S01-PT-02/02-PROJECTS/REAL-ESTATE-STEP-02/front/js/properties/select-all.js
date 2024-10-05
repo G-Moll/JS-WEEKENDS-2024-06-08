@@ -1,10 +1,13 @@
+import { AJAXRequest } from "../models/client/AJAXRequest.js";
 var holder = document.getElementById( "holder" );
-var endpoint = "http://localhost:8080/index-select-all.php";
+var endpoint = "http://localhost:8080/v2/properties/select-all.php";
 var htmlData = "";
 var xhr = new XMLHttpRequest();
 xhr.open( "GET", endpoint, true );
 xhr.send();
 xhr.addEventListener( "load", loadSelectedData );
+
+console.log( AJAXRequest );
 
 function loadSelectedData( e ) {
 	var dataJson = JSON.parse( e.target.responseText ).data;
@@ -22,9 +25,8 @@ function dataDOMInsert( arrayData ) {
 	holder.innerHTML = htmlData;
 } 
 
+var modulePropertiesSelectAll = {
+	name: "Module Properties Select All"
+};
 
-
-
-
-
-
+export { modulePropertiesSelectAll };

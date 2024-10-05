@@ -1,0 +1,6 @@
+Modules (archivo.js)
+	CommonJS (NodeJS) Angular, React, Vue
+	ES6 (Web Browser)
+
+
+
