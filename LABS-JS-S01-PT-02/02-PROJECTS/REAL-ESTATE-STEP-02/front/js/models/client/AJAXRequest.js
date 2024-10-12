@@ -7,8 +7,12 @@ function AJAXRequest( method, endpoint, responseAction ) {
 	this.xhr.addEventListener( "load", responseAction );
 }
 
-AJAXRequest.prototype.send = function send() {
-	this.xhr.send();
+AJAXRequest.prototype.send = function send( payload ) {
+	this.xhr.send( payload );
+};
+
+AJAXRequest.prototype.setHeader = function setHeader() {
+	this.xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
 };
 
 export { AJAXRequest };

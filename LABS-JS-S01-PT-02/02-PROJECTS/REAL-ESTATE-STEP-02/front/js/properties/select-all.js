@@ -1,4 +1,5 @@
 import { AJAXRequest } from "../models/client/AJAXRequest.js";
+
 var holder = document.getElementById( "holder" );
 var endpoint = "http://localhost:8080/v2/properties/select-all.php";
 var htmlData = "";

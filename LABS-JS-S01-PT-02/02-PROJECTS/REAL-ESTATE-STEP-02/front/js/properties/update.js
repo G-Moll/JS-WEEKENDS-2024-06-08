@@ -1,3 +1,5 @@
+import { AJAXRequest } from "../models/client/AJAXRequest.js";
+
 var formUI = document.getElementsByTagName( "form" )[ 0 ];
 var inputsUI = formUI.getElementsByTagName( "input" );
 var inputId 	   = inputsUI[ 0 ]; 
@@ -14,12 +16,16 @@ var recordSelect = document.getElementById( "recordSelect" );
 recordUpdate.addEventListener( "click", function( e ) {
 	e.preventDefault();
 
-	var endpoint = "http://localhost:8080/index-update.php";
-	var xhr = new XMLHttpRequest();
-	xhr.open( "POST", endpoint, true );
-	xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
-	xhr.send( "id=" + inputId.value + "&property=" + inputProperty.value + "&location=" + inputLocation.value + "&price=" + inputPrice.value );
-	xhr.addEventListener( "load", loadUpdatedData );
+	var endpoint = "http://localhost:8080/v2/properties/update.php";
+
+	var requestPropertiesUpdate = new AJAXRequest(
+		"POST",
+		endpoint,
+		loadUpdatedData
+	);
+	requestPropertiesUpdate.setHeader();
+	requestPropertiesUpdate.send( "id=" + inputId.value + "&property=" + inputProperty.value + "&location=" + inputLocation.value + "&price=" + inputPrice.value );
+
 });
 
 function loadUpdatedData( e ) {
@@ -28,3 +34,10 @@ function loadUpdatedData( e ) {
 	// inputProperty.value = "";
 	formUI.reset();
 }
+
+
+var modulePropertiesUpdate = {
+	name: "Module Properties Update"
+};
+
+export { modulePropertiesUpdate};
