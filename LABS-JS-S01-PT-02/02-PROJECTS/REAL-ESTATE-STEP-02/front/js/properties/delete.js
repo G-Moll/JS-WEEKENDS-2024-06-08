@@ -1,3 +1,5 @@
+import { AJAXRequest } from "../models/client/AJAXRequest.js";
+
 var formUI = document.getElementsByTagName( "form" )[ 0 ];
 var inputsUI = formUI.getElementsByTagName( "input" );
 var inputId 	   = inputsUI[ 0 ]; 
@@ -14,12 +16,21 @@ var recordSelect = document.getElementById( "recordSelect" );
 recordDelete.addEventListener( "click", function( e ) {
 	e.preventDefault();
 
-	var endpoint = "http://localhost:8080/index-delete.php";
-	var xhr = new XMLHttpRequest();
-	xhr.open( "POST", endpoint, true );
-	xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
-	xhr.send( "id=" + inputId.value );
-	xhr.addEventListener( "load", loadDeletedData );
+	var endpoint = "http://localhost:8080/v2/properties/delete.php";
+
+	var requestPropertiesDelete = new AJAXRequest(
+		"POST",
+		endpoint,
+		loadDeletedData
+	);
+	requestPropertiesDelete.setHeader();
+	requestPropertiesDelete.send( "id=" + inputId.value );
+
+	// var xhr = new XMLHttpRequest();
+	// xhr.open( "POST", endpoint, true );
+	// xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
+	// xhr.send( "id=" + inputId.value );
+	// xhr.addEventListener( "load", loadDeletedData );
 });
 
 function loadDeletedData( e ) {
@@ -27,3 +38,9 @@ function loadDeletedData( e ) {
 	console.log( dataJson );
 	formUI.reset();
 }
+
+var modulePropertiesDelete = {
+	name: "Module Properties Delete"
+};
+
+export { modulePropertiesDelete };

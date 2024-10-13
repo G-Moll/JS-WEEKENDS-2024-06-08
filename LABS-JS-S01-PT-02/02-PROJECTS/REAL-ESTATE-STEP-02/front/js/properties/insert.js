@@ -1,3 +1,5 @@
+import { AJAXRequest } from "../models/client/AJAXRequest.js";
+
 var formUI = document.getElementsByTagName( "form" )[ 0 ];
 var inputsUI = formUI.getElementsByTagName( "input" );
 var inputId 	   = inputsUI[ 0 ]; 
@@ -18,15 +20,24 @@ var dataPrice = 3700;
 recordInsert.addEventListener( "click", function( e ) {
 	e.preventDefault();
 
-	var endpoint = "http://localhost:8080/index-insert.php";
-	var xhr = new XMLHttpRequest();
-	xhr.open( "POST", endpoint, true );
-	xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
-	xhr.send( "property=" + inputProperty.value + "&location=" + inputLocation.value + "&price=" + inputPrice.value );
-	xhr.addEventListener( "load", loadInsertedData );
+	var endpoint = "http://localhost:8080/v2/properties/insert.php";
+
+	var requestPropertiesInsert = new AJAXRequest(
+		"POST",
+		endpoint,
+		loadInsertedData
+	);
+	requestPropertiesInsert.setHeader();
+	requestPropertiesInsert.send( "property=" + inputProperty.value + "&location=" + inputLocation.value + "&price=" + inputPrice.value );
 });
 
 function loadInsertedData( e ) {
 	var dataJson = JSON.parse( e.target.responseText );;
 	console.log( dataJson );
 }
+
+var modulePropertiesInsert = {
+	name: "Module Properties Insert"
+};
+
+export { modulePropertiesInsert };
